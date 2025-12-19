@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EventSourcingDemo.Core\EventSourcingDemo.Core.csproj" />
+    <ProjectReference Include="..\EventSourcingDemo.EventStore\EventSourcingDemo.EventStore.csproj" />
+  </ItemGroup>
+</Project>
