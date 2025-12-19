@@ -1,467 +1,373 @@
-1️⃣ Architectural Style vs Architectural Pattern
-Architectural Style
+# Architectural Styles and Architectural Patterns
 
-A high-level structural approach to organizing a system
+---
 
-Defines overall system shape
+## 1️⃣ Architectural Style vs Architectural Pattern
 
-Less prescriptive, more conceptual
+### Architectural Style
+- A **high-level structural approach** to organizing a system  
+- Defines the **overall system shape**
+- Less prescriptive and more **conceptual**
 
-Architectural Pattern
+### Architectural Pattern
+- A **repeatable solution** to a known architectural problem  
+- More **concrete and prescriptive**
+- Often **implemented directly in code**
 
-A repeatable solution to a known architectural problem
+---
 
-More concrete and prescriptive
+## 2️⃣ Architectural Styles (System-Level)
 
-Often implemented directly in code
+### 1. Monolithic Architecture
 
-2️⃣ Architectural Styles (System-Level)
-1. Monolithic Architecture
-Description
+#### Description
+All components (UI, business logic, data access) are deployed as **one single unit**.
 
-All components (UI, business logic, data access) are deployed as one single unit.
+#### Characteristics
+- Single codebase
+- Single deployment
+- Shared database
 
-Characteristics
+#### Pros
+- Simple to develop
+- Easy to debug
+- Low operational complexity
 
-Single codebase
+#### Cons
+- Hard to scale
+- Tight coupling
+- Slow deployments
 
-Single deployment
+#### Use Cases
+- Small applications
+- MVPs
+- Early-stage startups
 
-Shared database
+---
 
-Pros
+### 2. Microservices Architecture
 
-Simple to develop
+#### Description
+Application is broken into **independent, loosely coupled services**, each responsible for a single business capability.
 
-Easy to debug
+#### Characteristics
+- Independent deployment
+- Decentralized data
+- API-based communication
 
-Low operational complexity
+#### Pros
+- High scalability
+- Independent teams
+- Fault isolation
 
-Cons
+#### Cons
+- Operational complexity
+- Distributed system challenges
+- Network latency
 
-Hard to scale
+#### Use Cases
+- Large enterprise systems
+- Cloud-native platforms
 
-Tight coupling
+---
 
-Slow deployments
+### 3. Service-Oriented Architecture (SOA)
 
-Use Cases
+#### Description
+Similar to microservices but with **shared infrastructure** and **enterprise service buses (ESB)**.
 
-Small applications
+#### Characteristics
+- Centralized governance
+- Heavy XML/SOAP
+- Shared contracts
 
-MVPs
+#### Pros
+- Reusability
+- Standardization
 
-Early-stage startups
+#### Cons
+- Tight coupling via ESB
+- Performance bottlenecks
 
-2. Microservices Architecture
-Description
+#### Use Cases
+- Legacy enterprise systems
+- Banking and government systems
 
-Application is broken into independent, loosely coupled services, each responsible for a single business capability.
+---
 
-Characteristics
+### 4. Event-Driven Architecture (EDA)
 
-Independent deployment
+#### Description
+Components communicate via **events**, not direct calls.
 
-Decentralized data
+#### Characteristics
+- Asynchronous communication
+- Event producers and consumers
+- Message brokers
 
-API-based communication
+#### Pros
+- Loose coupling
+- High scalability
+- Resilient systems
 
-Pros
+#### Cons
+- Hard to debug
+- Event ordering complexity
 
-High scalability
+#### Use Cases
+- Real-time systems
+- Streaming platforms
+- IoT systems
 
-Independent teams
+---
 
-Fault isolation
+### 5. Client–Server Architecture
 
-Cons
-
-Operational complexity
-
-Distributed system challenges
-
-Network latency
-
-Use Cases
-
-Large enterprise systems
-
-Cloud-native platforms
-
-3. Service-Oriented Architecture (SOA)
-Description
-
-Similar to microservices but with shared infrastructure and enterprise service buses (ESB).
-
-Characteristics
-
-Centralized governance
-
-Heavy XML/SOAP
-
-Shared contracts
-
-Pros
-
-Reusability
-
-Standardization
-
-Cons
-
-Tight coupling via ESB
-
-Performance bottlenecks
-
-Use Cases
-
-Legacy enterprise systems
-
-Banking, government systems
-
-4. Event-Driven Architecture (EDA)
-Description
-
-Components communicate via events, not direct calls.
-
-Characteristics
-
-Asynchronous
-
-Event producers and consumers
-
-Message brokers
-
-Pros
-
-Loose coupling
-
-High scalability
-
-Resilient systems
-
-Cons
-
-Hard to debug
-
-Event ordering complexity
-
-Use Cases
-
-Real-time systems
-
-Streaming platforms
-
-IoT
-
-5. Client–Server Architecture
-Description
-
+#### Description
 Clients request services; servers provide them.
 
-Characteristics
+#### Characteristics
+- Centralized server
+- Multiple clients
 
-Centralized server
+#### Pros
+- Easy to manage
+- Centralized control
 
-Multiple clients
+#### Cons
+- Single point of failure
+- Scalability limitations
 
-Pros
+#### Use Cases
+- Web applications
+- Database systems
 
-Easy to manage
+---
 
-Centralized control
+### 6. Peer-to-Peer (P2P) Architecture
 
-Cons
-
-Single point of failure
-
-Scalability limitations
-
-Use Cases
-
-Web applications
-
-Database systems
-
-6. Peer-to-Peer (P2P)
-Description
-
+#### Description
 All nodes act as both client and server.
 
-Characteristics
+#### Characteristics
+- Decentralized architecture
+- Nodes communicate directly
 
-Decentralized
+#### Pros
+- No central failure point
+- Highly scalable
 
-Nodes communicate directly
+#### Cons
+- Security challenges
+- Data consistency issues
 
-Pros
+#### Use Cases
+- Blockchain
+- File-sharing systems
 
-No central failure point
+---
 
-Highly scalable
+## 3️⃣ Architectural Patterns (Application-Level)
 
-Cons
+### 1. Layered Architecture (N-Tier)
 
-Security challenges
+#### Description
+Application is organized into **layers**, each with a distinct responsibility.
 
-Data consistency issues
+#### Typical Layers
+- Presentation
+- Application
+- Domain
+- Data Access
 
-Use Cases
+#### Pros
+- Clear separation of concerns
+- Easy to understand
 
-Blockchain
+#### Cons
+- Can become rigid
+- Performance overhead
 
-File sharing systems
+#### Use Cases
+- Enterprise applications
+- Traditional web applications
 
-3️⃣ Architectural Patterns (Application-Level)
-1. Layered Architecture (N-Tier)
-Description
+---
 
-Application is organized into layers, each with a distinct responsibility.
+### 2. MVC (Model–View–Controller)
 
-Typical Layers
-
-Presentation
-
-Application
-
-Domain
-
-Data Access
-
-Pros
-
-Clear separation of concerns
-
-Easy to understand
-
-Cons
-
-Can become rigid
-
-Performance overhead
-
-Use Cases
-
-Enterprise applications
-
-Traditional web apps
-
-2. MVC (Model–View–Controller)
-Description
-
+#### Description
 Separates UI concerns into three components.
 
-Components
+#### Components
+- **Model** – Business logic
+- **View** – UI
+- **Controller** – Request handling
 
-Model: business logic
+#### Pros
+- Separation of concerns
+- Testable UI logic
 
-View: UI
+#### Cons
+- Can become controller-heavy
 
-Controller: request handling
+#### Use Cases
+- Web frameworks (ASP.NET MVC, Spring MVC)
 
-Pros
+---
 
-Separation of concerns
+### 3. MVVM (Model–View–ViewModel)
 
-Testable UI logic
+#### Description
+Improves MVC for **data binding**.
 
-Cons
+#### Components
+- ViewModel handles UI state
+- View binds directly to ViewModel
 
-Can become controller-heavy
+#### Pros
+- Excellent for rich UIs
+- High testability
 
-Use Cases
+#### Cons
+- Steeper learning curve
 
-Web frameworks (ASP.NET MVC, Spring MVC)
+#### Use Cases
+- WPF
+- Xamarin
+- Blazor
 
-3. MVVM (Model–View–ViewModel)
-Description
+---
 
-Improves MVC for data binding.
+### 4. Clean Architecture
 
-Components
+#### Description
+Organizes code around **business rules**, not frameworks.
 
-ViewModel handles UI state
+#### Core Rule
+> Dependencies always point inward.
 
-View binds directly to ViewModel
+#### Layers
+- Entities
+- Use Cases
+- Interface Adapters
+- Frameworks
 
-Pros
+#### Pros
+- Highly testable
+- Framework-independent
 
-Excellent for rich UIs
+#### Cons
+- Initial complexity
+- Overhead for small applications
 
-High testability
+#### Use Cases
+- Long-lived enterprise systems
 
-Cons
+---
 
-Steeper learning curve
+### 5. Hexagonal Architecture (Ports & Adapters)
 
-Use Cases
+#### Description
+Core logic is isolated; external systems plug in via adapters.
 
-WPF
+#### Pros
+- Technology-agnostic
+- Easy testing
 
-Xamarin
+#### Cons
+- More abstraction layers
 
-Blazor
+#### Use Cases
+- Domain-driven design
+- Integration-heavy systems
 
-4. Clean Architecture
-Description
+---
 
-Organizes code around business rules, not frameworks.
+### 6. Event Sourcing
 
-Core Rule
+#### Description
+System state is derived from a **sequence of events**, not stored directly.
 
-Dependencies always point inward.
+#### Pros
+- Complete audit trail
+- Temporal queries possible
 
-Layers
+#### Cons
+- Complex modeling
+- Hard migrations
 
-Entities
+#### Use Cases
+- Financial systems
+- Audit-heavy domains
 
-Use Cases
+---
 
-Interface Adapters
+### 7. CQRS (Command Query Responsibility Segregation)
 
-Frameworks
+#### Description
+Separates **read models** and **write models**.
 
-Pros
+#### Pros
+- Scales reads and writes independently
+- Optimized performance
 
-Highly testable
+#### Cons
+- Eventual consistency
+- Increased complexity
 
-Framework-independent
+#### Use Cases
+- High-traffic systems
+- Event-driven microservices
 
-Cons
+---
 
-Initial complexity
+### 8. Microkernel (Plugin Architecture)
 
-Overhead for small apps
+#### Description
+Core system with plug-in extensions.
 
-Use Cases
+#### Pros
+- Highly extensible
+- Modular
 
-Long-lived enterprise systems
+#### Cons
+- Plugin versioning issues
 
-5. Hexagonal Architecture (Ports & Adapters)
-Description
+#### Use Cases
+- IDEs
+- Operating systems
+- CMS platforms
 
-Core logic isolated; external systems plug in via adapters.
+---
 
-Pros
+### 9. Pipe-and-Filter Architecture
 
-Technology-agnostic
-
-Easy testing
-
-Cons
-
-More abstraction layers
-
-Use Cases
-
-Domain-driven design
-
-Integration-heavy systems
-
-6. Event Sourcing
-Description
-
-State is derived from a sequence of events, not stored directly.
-
-Pros
-
-Complete audit trail
-
-Temporal queries possible
-
-Cons
-
-Complex modeling
-
-Hard migrations
-
-Use Cases
-
-Financial systems
-
-Audit-heavy domains
-
-7. CQRS (Command Query Responsibility Segregation)
-Description
-
-Separates read models and write models.
-
-Pros
-
-Scales reads/writes independently
-
-Optimized performance
-
-Cons
-
-Eventual consistency
-
-Increased complexity
-
-Use Cases
-
-High-traffic systems
-
-Event-driven microservices
-
-8. Microkernel (Plugin Architecture)
-Description
-
-Core system + plug-in extensions.
-
-Pros
-
-Highly extensible
-
-Modular
-
-Cons
-
-Plugin versioning issues
-
-Use Cases
-
-IDEs
-
-Operating systems
-
-CMS platforms
-
-9. Pipe-and-Filter
-Description
-
+#### Description
 Data flows through a sequence of processing components.
 
-Pros
+#### Pros
+- Reusable filters
+- Easy parallelism
 
-Reusable filters
+#### Cons
+- Data transformation overhead
 
-Easy parallelism
+#### Use Cases
+- Compilers
+- ETL pipelines
+- Streaming data processing
 
-Cons
+---
 
-Data transformation overhead
+## 4️⃣ One-Line Summaries
 
-Use Cases
+- **Monolith**: Single deployable unit  
+- **Microservices**: Independent services per business capability  
+- **Layered**: Separation by responsibility  
+- **Clean Architecture**: Business rules at the center  
+- **MVC**: UI separation  
+- **EDA**: Systems communicate via events  
+- **CQRS**: Separate reads and writes  
 
-Compilers
-
-ETL pipelines
-
-Streaming data processing
-
-4️⃣ One-Liner Summaries
-
-Monolith: Single deployable unit
-
-Microservices: Independent services per business capability
-
-Layered: Separation by responsibility
-
-Clean Architecture: Business rules at the center
-
-MVC: UI separation
-
-EDA: Systems communicate via events
-
-CQRS: Separate reads and writes
+---
